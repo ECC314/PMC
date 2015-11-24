@@ -1,0 +1,27 @@
+$${
+
+&pmctoolswitch1 = "stone|cobblestone|iron_ore|gold_ore"
+&pmctoolswitch2 = "grass|dirt|sand|gravel|clay|mycelium"
+&pmctoolswitch3 = "planks|log|log2|fence|pumpkin|cocoa"
+&pmctoolswitch4 = ""
+&pmctoolswitch9 = "coal_ore|lapis_ore|diamond_ore|redstone_ore|lit_redstone_ore|emerald_ore"
+DO;
+    IF(@pmctoolswitch)
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch1%)")
+            SLOT(1)
+        ENDIF
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch2%)$")
+            SLOT(2)
+        ENDIF
+		IFMATCHES(%HITID%,"^(%&pmctoolswitch3%)$")
+            SLOT(3)
+        ENDIF
+		IF(HIT = "ENTITY")
+            SLOT(4)
+        ENDIF
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch9%)$")
+            SLOT(9)
+        ENDIF
+    ENDIF
+LOOP();
+}$$

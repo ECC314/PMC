@@ -1,0 +1,71 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.(about|help pmc)$")
+  LOG("")
+  LOG("&4-&2-&4-&2- &cPMC &4-&2-&4- &6(&cP&6i's &cm&6acro &cc&6ollection) &2-&4-&2-&4-")
+  LOG("  &6-Created by &c314&6-")
+  LOG("&6If you have any questions, feel free to PM &c314&6.")
+  LOG("&6Main thread: &ewww.tinyurl.com/314sMacro")
+  LOG("")
+  UNSET(@pmcerror)
+  FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help$")
+	LOG("")
+	LOG("&4- &cPMC - Available commands &4-")
+	LOG("  &6Use &e.help <Chapter name>&6 to see available commands.")
+	LOG("  &6Available help chapters: &bSG&6, &bMining&6, &bJoin&6, &bVote&6, &bShout&6, &bStats&6.")
+	LOG("  &9Support:")
+	LOG("  &e.help &6- Show available macro commands.")
+	LOG("  &e.about &6- Show this macro's version info.")
+	LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help mining$")
+    LOG("")
+	LOG("&3- &bMining module - Available commands &3-")
+	LOG("    &e.tool &6- Automated Tool Switcher.")
+	LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help stat(s|istics)?$")
+    LOG("")
+    LOG("&3- &bStats module - Available commands &3-")
+    LOG("    &e.stats [reset] mining  &6- Shows (or resets) &7mining &6statistics.")
+    LOG("    &e.stats [reset] farming  &6- Shows (or resets) &afarming &6statistics.")
+    LOG("    &e.stats [reset] sg  &6- Shows (or resets) &cSurvivalGames &6statistics.")
+    LOG("    &e.stats [reset] voting &6- Shows (or resets) &evoting &6statistics.")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help sg$")
+    LOG("")
+    LOG("&3- &bSG module - Available commands &3-")
+    LOG("    &e.sg vote &6- Automates &c/sg vote &6when joining SG.")
+    LOG("    &8.sg kit &7- Requires further testing.")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+    
+IFMATCHES(%@&pmccommand%,"(?i)^\.help join$")
+    LOG("")
+    LOG("&3- &bJoin module - Available commands &3-")
+    LOG("    &e.join &6- Toggles the join alert in chat.")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help shout$")
+    LOG("")
+    LOG("&3- &bShout module - Available commands &3-")
+    LOG("    &e.shout &6- Toggles the visibility of [SHOUT] messages.")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid help chapter. -> &e.help")
+    UNSET(@pmcerror)
+ENDIF

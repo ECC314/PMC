@@ -1,0 +1,41 @@
+$${
+STRIP(@&pmccommand,%CHAT%)
+SET(@pmcerror)
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.(help|about$)")
+	EXEC(PMC_Internal_Help.txt,"PMC help module")
+    FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.join\b")
+	EXEC(PMC_Internal_Join.txt,"PMC Join module")
+    FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.shout\b")
+	EXEC(PMC_Internal_Shout.txt,"PMC Shout module")
+    FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.sg\b")
+	EXEC(PMC_Internal_SG.txt,"PMC SurvivalGames module")
+    FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)?")
+	EXEC(PMC_Internal_Stats.txt,"PMC stats module")
+    FILTER()
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool\b")
+	EXEC(PMC_Internal_ToolSwitch.txt,"PMC ToolSwitch module")
+    FILTER()
+ENDIF
+ 
+IF(@pmcerror)
+    IFMATCHES(%@&pmccommand%,"^\.[A-Za-z0-9]")
+        LOG("&2&l[&a&lPMC&2&l] &cError: Unknown command. Type &e.help &cto see valid commands.")
+        FILTER()
+    ENDIF
+ENDIF
+}$$

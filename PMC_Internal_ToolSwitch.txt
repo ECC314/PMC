@@ -1,0 +1,14 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool$")
+    TOGGLE(@pmctoolswitch)
+    IF(@pmctoolswitch)
+        LOG("&2&l[&a&lPMC: Mining&2&l]&6 ToolSwitch-Macro &aenabled&6.")
+    ELSE
+        LOG("&2&l[&a&lPMC: Mining&2&l]&6 ToolSwitch-Macro &cdisabled&6.")
+    ENDIF
+    UNSET(@pmcerror)
+ENDIF
+    
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: No parameters expected. -> &e.tool")
+    UNSET(@pmcerror)
+ENDIF

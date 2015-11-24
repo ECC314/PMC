@@ -1,0 +1,14 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.shout$")
+	TOGGLE(@pmcshout)
+	IF(@pmcshout)
+		LOG("&2&l[&a&lPMC: Shout&2&l]&6 ShoutIgnore-Macro &aenabled&6.")
+	ELSE
+		LOG("&2&l[&a&lPMC: Shout&2&l]&6 ShoutIgnore-Macro &cdisabled&6.")
+	ENDIF
+	UNSET(@pmcerror)
+ENDIF
+    
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: No parameters expected. -> &e.shout")
+    UNSET(@pmcerror)
+ENDIF

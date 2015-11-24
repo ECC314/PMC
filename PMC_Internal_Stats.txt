@@ -1,0 +1,228 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? reset min(e|ing)$")
+        @#pmcstatscoal = 0
+        @#pmcstatsiron = 0
+        @#pmcstatsgold = 0
+        @#pmcstatslapis = 0
+        @#pmcstatsredstone = 0
+        @#pmcstatsdiamond = 0
+        @#pmcstatsemerald = 0
+        @#pmcstatsstone = 0
+        LOG("&2&l[&a&lPMC: Stats&2&l]&7 Mining &6statistics reset.")
+        @&pmcstatsdatem = %DATE%
+        @&pmcstatstimem = %TIME%
+        UNSET(@pmcerror)
+    ENDIF
+
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? vot(e|ing) reset$")
+        @#pmcvotelucky = 0
+        @#pmcvotevery = 0
+        @#pmcvotemega = 0
+        @#pmcvotesuper = 0
+        @#pmcvoteultra = 0
+        @&pmcvoteluckydate = "Never"
+        @&pmcvoteluckytime = "Never"
+        @&pmcvoteverydate = "Never"
+        @&pmcvoteverytime = "Never"
+        @&pmcvotemegadate = "Never"
+        @&pmcvotemegatime = "Never"
+        @&pmcvotesuperdate = "Never"
+        @&pmcvotesupertime = "Never"
+        @&pmcvoteultradate = "Never"
+        @&pmcvoteultratime = "Never"
+        @&pmcvotelastdate = "Never"
+        @&pmcvotelasttime = "Never"
+        @&pmcvoteresetdate = %DATE%
+        @&pmcvoteresettime = %TIME%
+    LOG("&2&l[&a&lPMC: Stats&2&l]&6 Statistics reset.")
+        UNSET(@pmcerror)
+    ENDIF
+        
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? vot(e|ing)$")
+        LOG("")
+        LOG("&6~*~*~ &ePMC: Voting evaluation &6~*~*~")
+        LOG("&6Last reset on %@&pmcvoteresetdate% at %@&pmcvoteresettime%.")
+        LOG("&eVotes:      %@#pmcvotecount% (Last: %@&pmcvotelastdate% at %@&pmcvotelasttime%)")
+        LOG("&eLucky:      %@#pmcvotelucky% (Last: %@&pmcvoteluckydate% at %@&pmcvoteluckytime%)")
+        LOG("&eVeryLucky:  %@#pmcvotevery% (Last: %@&pmcvoteverydate% at %@&pmcvoteverytime%)")
+        LOG("&eMegaLucky:  %@#pmcvotemega% (Last: %@&pmcvotemegadate% at %@&pmcvotemegatime%)")
+        LOG("&eSuperLucky: %@#pmcvotesuper% (Last: %@&pmcvotesuperdate% at %@&pmcvotesupertime%)")
+        LOG("&eUltraLucky: %@#pmcvoteultra% (Last: %@&pmcvoteultradate% at %@&pmcvoteultratime%)")
+        LOG("")
+        UNSET(@pmcerror)
+    ENDIF
+    
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? min(e|ing)$")
+        LOG("")
+        LOG("&e-$-$- &6PMC: &7Mining &6evaluation &e-$-$-")
+        LOG("&6Last reset on %@&pmcstatsdatem% at %@&pmcstatstimem%.")
+        LOG("&8Coal:     %@#pmcstatscoal%")
+        LOG("&7Iron:     %@#pmcstatsiron%")
+        LOG("&eGold:     %@#pmcstatsgold%")
+        LOG("&9Lapis:    %@#pmcstatslapis%")
+        LOG("&4Redstone: %@#pmcstatsredstone%")
+        LOG("&bDiamond:  %@#pmcstatsdiamond%")
+        LOG("&aEmerald:  %@#pmcstatsemerald%")
+        LOG("&7Stone:    %@#pmcstatsstone%")
+        LOG("&6Total worth excluding stone and emeralds:")
+        ECHO("//calc %@#pmcstatscoal%+%@#pmcstatsiron%*7.5+%@#pmcstatsgold%*10+%@#pmcstatslapis%*3.75+%@#pmcstatsredstone%*1.5+%@#pmcstatsdiamond%*25")
+        UNSET(@pmcerror)
+    ENDIF
+
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? reset sg$")
+        @#pmcstatssgplayed = 0
+        @#pmcstatssgkills = 0
+        @#pmcstatssgmoney = 0
+        @#pmcstatssgwins = 0
+        LOG("&2&l[&a&lPMC: Stats&2&l]&c SurvivalGames &6statistics reset.")
+        @&pmcstatsdatesg = %DATE%
+        @&pmcstatstimesg = %TIME%
+        UNSET(@pmcerror)
+    ENDIF
+        
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? sg$")
+        LOG("")
+        LOG("&b---&7[- &6PMC: SG evaluation &7-]&b---")
+        LOG("&6Last reset on %@&pmcstatsdatesg% at %@&pmcstatstimesg%.")
+        LOG("&cGames played: &4%@#pmcstatssgplayed%")
+        LOG("&cKills scored: &4%@#pmcstatssgkills%")
+        LOG("&cMoney earned: &4%@#pmcstatssgmoney%")
+        LOG("&cGames won:    &4%@#pmcstatssgwins%")
+        LOG("")
+        UNSET(@pmcerror)
+    ENDIF; 
+    
+        IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? reset farm(ing)?$")
+        @#pmcstatsmelon = 0
+        @#pmcstatspumpkin = 0
+        @#pmcstatspotato = 0
+        @#pmcstatscarrot = 0
+        @#pmcstatswheat = 0
+        @#pmcstatscane = 0
+        @#pmcstatsnwart = 0
+        @#pmcstatscocoa = 0
+        LOG("&2&l[&a&lPMC: Stats&2&l]&a Farming &6statistics reset.")
+        @&pmcstatsdatef = %DATE%
+        @&pmcstatstimef = %TIME%
+        UNSET(@pmcerror)
+    ENDIF
+        
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? farm(ing)?$")
+        LOG("")
+        LOG("&e-$-$- &6PMC: &aFarming &6evaluation &e-$-$-")
+        LOG("&6Last reset on %@&pmcstatsdatef% at %@&pmcstatstimef%.")
+        LOG("&2Melons:       %@#pmcstatsmelon%")
+        LOG("&6Pumpkins:     %@#pmcstatspumpkin%")
+        LOG("&6Potatoes:     %@#pmcstatspotato%")
+        LOG("&6Carrots:      %@#pmcstatscarrot%")
+        LOG("&eWheat:        %@#pmcstatswheat%")
+        LOG("&aSugar Canes:  %@#pmcstatscane%")
+        LOG("&6Cocoa beans:  %@#pmcstatscocoa%")
+        LOG("&cNether Warts: %@#pmcstatsnwart%")     
+        LOG("&6Total worth:")
+        ECHO("//calc %@#pmcstatspumpkin%*0.4+%@#pmcstatsmelon%*1.65+%@#pmcstatspotato%*0.3+%@#pmcstatscarrots%*0.3+%@#pmcstatscane%*0.15+%@#pmcstatswheat%*0.6+%@#pmcstatscocoa%*0.6+%@#pmcstatsnwart%*0.35")
+        UNSET(@pmcerror)
+    ENDIF
+    	
+	IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? reset chat$")
+        @#pmcchatr1 = 0
+		@#pmcchatr2 = 0
+		@#pmcchatr3 = 0
+		@#pmcchatr4 = 0
+		@#pmcchatr5 = 0
+		@#pmcchatr6 = 0
+		@#pmcchatr7 = 0
+		@#pmcchatr8 = 0
+		@#pmcchats1 = 0
+		@#pmcchats2 = 0
+		@#pmcchats3 = 0
+		@#pmcchats4 = 0
+		@#pmcchats5 = 0
+		@#pmcchats6 = 0
+		@#pmcchatd1 = 0
+		@#pmcchatd2 = 0
+		@#pmcchatd3 = 0
+		@#pmcchatd4 = 0
+		@#pmcchatd5 = 0
+		@#pmcchatd6 = 0
+		@#pmcchatd7 = 0
+		@#pmcchatg = 0
+		@#pmcchattr = 0
+		@#pmcchattrv = 0
+		@#pmcchatauc = 0
+		@#pmcchatv = 0
+		@#pmcchatn = 0
+		@#pmcchatl = 0
+		@#pmcchatp = 0
+		@#pmcchatm = 0
+		@#pmcchata = 0
+		@#pmcchatal = 0
+		@#pmcchats = 0
+		@#pmcchatad = 0
+		@#pmcchatsg = 0
+		LOG("&2&l[&a&lPMC: Stats&2&l]&b Chat &6statistics reset.")
+        @&pmcchatdate = %DATE%
+        @&pmcchattime = %TIME%
+        UNSET(@pmcerror)
+    ENDIF
+    
+    IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? chat$")
+        LOG("")
+        LOG("&e-$-$- &6PMC: &bChat &6evaluation &e-$-$-")
+        LOG("&6Last reset on %@&pmcchatdate% at %@&pmcchattime%.")
+        LOG("&f[Builder]         %@#pmcchatr1%")
+        LOG("&a[Resident]        %@#pmcchatr2%")
+        LOG("&2[Mayor]           %@#pmcchatr3%")
+        LOG("&6[President]       %@#pmcchatr4%")
+        LOG("&6[T&2y&6c&2o&6o&2n&6]          %@#pmcchatr5%")
+        LOG("&6[&a$&bEcoLeader&a$&6]     %@#pmcchatr6%")
+        LOG("&6[&a$$&3E&bc&3o&bM&3a&bs&3t&be&3r&a$$&6]   %@#pmcchatr7%")
+        LOG("&6[&a$$$&3EcoLegend&a$$$&6] %@#pmcchatr8%")
+		LOG("&3[Moderator]     %@#pmcchats1%")
+        LOG("&c[SuperMod]      %@#pmcchats2%")
+        LOG("&c[&4G&came&4A&cdmin]     %@#pmcchats3%")
+        LOG("&4[ServerAdmin]   %@#pmcchats4%")
+		LOG("&4[ServerOwner]   %@#pmcchats5%")
+        LOG("&9[&8|||&7Founder&8|||&9]     %@#pmcchats6%")
+		
+        LOG("&e[$]     %@#pmcchatd1%")
+        LOG("&e[$$]    %@#pmcchatd2%")
+        LOG("&e[$$$]   %@#pmcchatd3%")
+        LOG("&e[$$$$]  %@#pmcchatd4%")
+        LOG("&e[VIP]   %@#pmcchatd5%")
+        LOG("&e[VIP+]  %@#pmcchatd6%")
+        LOG("&7[&6*&bVIP&6*&7] %@#pmcchatd7%")
+		
+        LOG("&f[G]     %@#pmcchatg%")
+        LOG("&7[Tr]    %@#pmcchattr%")
+        LOG("&3[Trv]   %@#pmcchattrv%")
+        LOG("&b[Auc]   %@#pmcchatauc%")
+        LOG("&a[V]     %@#pmcchatv%")
+        LOG("&d[N]     %@#pmcchatn%")
+        LOG("&e[L]     %@#pmcchatl%")
+        LOG("&5[PvP]   %@#pmcchatp%")
+		LOG("&e[M]     %@#pmcchatm%")
+        LOG("&e[A]     %@#pmcchata%")
+        LOG("&c[Alert] %@#pmcchatal%")
+        LOG("&6[S]     %@#pmcchats%")
+        LOG("&9[Ad]    %@#pmcchatad%")
+        LOG("&e[sg]    %@#pmcchatsg%")
+        UNSET(@pmcerror)
+    ENDIF	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)?$")
+		LOG("&2&l[&a&lPMC&2&l]&c Error: Missing statistics parameter. -> &e.help stats")
+        UNSET(@pmcerror)   
+    ENDIF
+		
+    IF(@pmcerror)
+        LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid statistics parameter. -> &e.help stats")
+        UNSET(@pmcerror)
+    ENDIF

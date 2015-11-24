@@ -1,0 +1,32 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.sg vote$")
+    TOGGLE(@pmcsgvote)
+    IF(!@pmcsgvote)
+        LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG vote &aenabled&6.")
+    ELSE
+        LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG vote &cdisabled&6.")
+    ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit\b")
+    IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit (.+)")
+        MATCH(%@&pmccommand%,(?i)^\.sg kit (.+)",{&pmcsgkits})
+        LOG(%&pmcsgkits%)
+    ENDIF
+
+    IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit$")
+        ECHO("/kit %&pmcsgkits%")
+        LOG(%&pmcsgkits%)
+    ENDIF
+    UNSET(@pmcerror)
+ENDIF
+     
+IFMATCHES(%@&pmccommand%,"(?i)^\.sg$")
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Missing parameter. -> &e.help sg")
+    UNSET(@pmcerror)
+ENDIF
+	 
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid parameter. -> &e.help sg")
+    UNSET(@pmcerror)
+ENDIF

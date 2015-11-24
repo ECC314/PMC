@@ -1,0 +1,14 @@
+IFMATCHES(%@&pmccommand%,"(?i)^\.join$")
+	TOGGLE(@pmcjoining)
+    IF(!@pmcjoining)
+        LOG("&2&l[&a&lPMC: Join&2&l]&6 JoinAlert-Macro &aenabled&6.")
+    ELSE
+        LOG("&2&l[&a&lPMC: Join&2&l]&6 JoinAlert-Macro &cdisabled&6.")
+    ENDIF
+    UNSET(@pmcerror)
+ENDIF
+    
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: No parameters expected. -> &e.join")
+    UNSET(@pmcerror)
+ENDIF
