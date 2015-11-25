@@ -8,24 +8,28 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.sg vote$")
     UNSET(@pmcerror)
 ENDIF
 
-IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit\b")
-    IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit (.+)")
-        MATCH(%@&pmccommand%,(?i)^\.sg kit (.+)",{&pmcsgkits})
-        LOG(%&pmcsgkits%)
-    ENDIF
-
-    IFMATCHES(%@&pmccommand%,"(?i)^\.sg kit$")
-        ECHO("/kit %&pmcsgkits%")
-        LOG(%&pmcsgkits%)
+IFMATCHES(%@&pmccommand%,"(?i)^\.sg kits?\b")
+    IFMATCHES(%@&pmccommand%,"(?i)^\.sg kits? (.+)")
+        MATCH(%@&pmccommand%,"(?i)^\.sg kits? (.+)",{@&pmcsgkits})
+        LOG("&2&l[&a&lPMC: SG&2&l]&6 Set to call &e%@&pmcsgkits%&6 when joining a game.")
+    ELSE
+        TOGGLE(@pmcsgkit)
+        IF(@pmcsgkit)
+            LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG kit &aenabled&6.")
+            LOG("&2&l[&a&lPMC: SG&2&l]&6 Saved kits: &e%@&pmcsgkits%")
+        ELSE
+            LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG kit &cdisabled&6.")
+            LOG("&2&l[&a&lPMC: SG&2&l]&6 Saved kits: &e%@&pmcsgkits%")
+        ENDIF
     ENDIF
     UNSET(@pmcerror)
 ENDIF
-     
+   
 IFMATCHES(%@&pmccommand%,"(?i)^\.sg$")
     LOG("&2&l[&a&lPMC&2&l]&c Error: Missing parameter. -> &e.help sg")
     UNSET(@pmcerror)
 ENDIF
-	 
+   
 IF(@pmcerror)
     LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid parameter. -> &e.help sg")
     UNSET(@pmcerror)

@@ -23,7 +23,8 @@ Occupied global variables:
 
 Variable name					Type						Description
 ----------------------------------------------------------------------------------------------------------
-pmcerror						Boolean						Check for a valid command inside the core.
+pmcerrorc						Boolean						Check for a valid command inside the core.
+pmcerror						Boolean						Check for a valid command inside a module.
 pmctoolswitch					Boolean						Status of the ToolSwitcher.
 
 pmcstatsmelon					Integer						Statistics module - Melons farmed since reset.
