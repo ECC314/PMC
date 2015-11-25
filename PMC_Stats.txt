@@ -125,7 +125,7 @@ IFMATCHES(%&chat%,"^\[ECC-SG\] Joining Arena (\d+)")
     IF(!@pmcsgvote)
         ECHO(/sg vote)
     ENDIF
-    IF(!@pmcsgkit)
+    IF(@pmcsgkit)
         ECHO(/kit %@&pmcsgkits%)
     ENDIF()
 ENDIF
