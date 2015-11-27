@@ -13,7 +13,7 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.help$")
     LOG("")
     LOG("&4- &cPMC - Available commands &4-")
     LOG("  &6Use &e.help <Chapter name>&6 to see available commands.")
-    LOG("  &6Available help chapters: &bSG&6, &bMining&6, &bJoin&6, &bVote&6, &bShout&6, &bStats&6.")
+    LOG("  &6Available help chapters: &bSG&6, &bTool&6, &bJoin&6, &bVote&6, &bShout&6, &bStats&6.")
     LOG("  &9Support:")
     LOG("  &e.help &6- Show available macro commands.")
     LOG("  &e.about &6- Show this macro's version info.")
@@ -21,17 +21,9 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.help$")
     UNSET(@pmcerror)
 ENDIF
 
-IFMATCHES(%@&pmccommand%,"(?i)^\.help mining$")
-    LOG("")
-    LOG("&3- &bMining module - Available commands &3-")
-    LOG("    &e.tool &6- Automated Tool Switcher.")
-    LOG("")
-    UNSET(@pmcerror)
-ENDIF
-
 IFMATCHES(%@&pmccommand%,"(?i)^\.help stat(s|istic(s)?)?$")
     LOG("")
-    LOG("&3- &bStats module - Available commands &3-")
+    LOG("&3- &bStatistics module - Available commands &3-")
     LOG("    &e.stats [reset] mining  &6- Shows (or resets) &7mining &6statistics.")
     LOG("    &e.stats [reset] farming  &6- Shows (or resets) &afarming &6statistics.")
     LOG("    &e.stats [reset] sg  &6- Shows (or resets) &cSurvivalGames &6statistics.")
@@ -43,7 +35,7 @@ ENDIF
 
 IFMATCHES(%@&pmccommand%,"(?i)^\.help sg$")
     LOG("")
-    LOG("&3- &bSG module - Available commands &3-")
+    LOG("&3- &bSurvivalGames module - Available commands &3-")
     LOG("    &e.sg vote &6- Automates &c/sg vote &6when joining SG.")
     LOG("    &e.sg kits [Kits] &6- Displays (or sets) kits to use when joining a game.")
     LOG("")
@@ -52,7 +44,7 @@ ENDIF
     
 IFMATCHES(%@&pmccommand%,"(?i)^\.help join$")
     LOG("")
-    LOG("&3- &bJoin module - Available commands &3-")
+    LOG("&3- &bJoinAlert module - Available commands &3-")
     LOG("    &e.join &6- Toggles the join alert in chat.")
     LOG("")
     UNSET(@pmcerror)
@@ -60,8 +52,18 @@ ENDIF
 
 IFMATCHES(%@&pmccommand%,"(?i)^\.help shout$")
     LOG("")
-    LOG("&3- &bShout module - Available commands &3-")
+    LOG("&3- &bShoutIgnore module - Available commands &3-")
     LOG("    &e.shout &6- Toggles the visibility of [SHOUT] messages.")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.help tool$")
+    LOG("")
+    LOG("&3- &bToolSwitch module - Available commands &3-")
+    LOG("    &e.tool &6- Toggles the automated ToolSwitch.")
+    LOG("    &e.tool set <tool> <slot> &6- Set custom slot layouts.")
+    LOG("        &6<tool> parameters: &bsilk&6,&b shovel&6,&b axe&6,&b sword&6,&b fortune&6.")
     LOG("")
     UNSET(@pmcerror)
 ENDIF

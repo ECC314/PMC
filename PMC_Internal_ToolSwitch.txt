@@ -1,14 +1,75 @@
 IFMATCHES(%@&pmccommand%,"(?i)^\.tool$")
     TOGGLE(@pmctoolswitch)
     IF(@pmctoolswitch)
-        LOG("&2&l[&a&lPMC: Mining&2&l]&6 ToolSwitch-Macro &aenabled&6.")
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 ToolSwitch-Macro &aenabled&6.")
     ELSE
-        LOG("&2&l[&a&lPMC: Mining&2&l]&6 ToolSwitch-Macro &cdisabled&6.")
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 ToolSwitch-Macro &cdisabled&6.")
     ENDIF
     UNSET(@pmcerror)
 ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool set fortune (\d+)$")
+	MATCH(%@&pmccommand%,"(?i)^\.tool set fortune (\d+)$",{&var})
+	SET(#var,%&var%)
+	IF((#var > 9) || (#var < 1))
+		LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&c Error: Invalid slot (1-9).")
+	ELSE
+		@#pmctoolfort = #var
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 Fortune pickaxe in slot &e%@#pmctoolfort%&6.")
+	ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool set silk (.+)$")
+	MATCH(%@&pmccommand%,"(?i)^\.tool set silk (.+)$",{&var})
+	SET(#var,%&var%)
+	IF((#var > 9) || (#var < 1))
+		LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&c Error: Invalid slot (1-9).")
+	ELSE
+		@#pmctoolsilk = #var
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 Silk touch pickaxe in slot &e%@#pmctoolsilk%&6.")
+	ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool set shovel (.+)$")
+	MATCH(%@&pmccommand%,"(?i)^\.tool set shovel (.+)$",{&var})
+	SET(#var,%&var%)
+	IF((#var > 9) || (#var < 1))
+		LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&c Error: Invalid slot (1-9).")
+	ELSE
+		@#pmctoolshovel = #var
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 Shovel in slot &e%@#pmctoolshovel%&6.")
+	ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool set axe (.+)$")
+	MATCH(%@&pmccommand%,"(?i)^\.tool set axe (.+)$",{&var})
+	SET(#var,%&var%)
+	IF((#var > 9) || (#var < 1))
+		LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&c Error: Invalid slot (1-9).")
+	ELSE
+		@#pmctoolaxe = #var
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 Axe in slot &e%@#pmctoolaxe%&6.")
+	ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%,"(?i)^\.tool set sword (.+)$")
+	MATCH(%@&pmccommand%,"(?i)^\.tool set sword (.+)$",{&var})
+	SET(#var,%&var%)
+	IF((#var > 9) || (#var < 1))
+		LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&c Error: Invalid slot (1-9).")
+	ELSE
+		@#pmctoolsword = #var
+        LOG("&2&l[&a&lPMC: ToolSwitch&2&l]&6 Sword in slot &e%@#pmctoolsword%&6.")
+	ENDIF
+    UNSET(@pmcerror)
+ENDIF
+
     
 IF(@pmcerror)
-    LOG("&2&l[&a&lPMC&2&l]&c Error: No parameters expected. -> &e.tool")
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid or missing ToolSwitch parameter. -> &e.help tool")
     UNSET(@pmcerror)
 ENDIF

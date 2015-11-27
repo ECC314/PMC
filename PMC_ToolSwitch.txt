@@ -8,19 +8,33 @@ $${
 DO;
     IF(@pmctoolswitch)
         IFMATCHES(%HITID%,"^(%&pmctoolswitch1%)")
-            SLOT(1)
+			IF((@#pmctoolsilk > 0) && (@#pmctoolsilk < 10))
+				SLOT(%@#pmctoolsilk%)
+			ENDIF
         ENDIF
-        IFMATCHES(%HITID%,"^(%&pmctoolswitch2%)$")
-            SLOT(2)
+		
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch2%)")
+			IF((@#pmctoolshovel > 0) && (@#pmctoolshovel < 10))
+				SLOT(%@#pmctoolshovel%)
+			ENDIF
         ENDIF
-		IFMATCHES(%HITID%,"^(%&pmctoolswitch3%)$")
-            SLOT(3)
+		
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch3%)")
+			IF((@#pmctoolaxe > 0) && (@#pmctoolaxe < 10))
+				SLOT(%@#pmctoolaxe%)
+			ENDIF
         ENDIF
-		IF(HIT = "ENTITY")
-            SLOT(4)
+		
+        IF(%HIT% = "ENTITY")
+			IF((@#pmctoolsword > 0) && (@#pmctoolsword < 10))
+				SLOT(%@#pmctoolsword%)
+			ENDIF
         ENDIF
-        IFMATCHES(%HITID%,"^(%&pmctoolswitch9%)$")
-            SLOT(9)
+		
+        IFMATCHES(%HITID%,"^(%&pmctoolswitch9%)")
+			IF((@#pmctoolfort > 0) && (@#pmctoolfort < 10))
+				SLOT(%@#pmctoolfort%)
+			ENDIF
         ENDIF
     ENDIF
 LOOP();

@@ -25,7 +25,13 @@ Variable name					Type						Description
 ----------------------------------------------------------------------------------------------------------
 pmcerrorc						Boolean						Check for a valid command inside the core.
 pmcerror						Boolean						Check for a valid command inside a module.
+
 pmctoolswitch					Boolean						Status of the ToolSwitcher.
+pmctoolsilk						Integer						Slot ID of the silk touch pickaxe.
+pmctoolspade					Integer						Slot ID of the spade.
+pmctoolaxe						Integer						Slot ID of the axe.
+pmctoolsword					Integer						Slot ID of the sword.
+pmctoolfort						Integer						Slot ID of the fortune pickaxe.
 
 pmcstatsmelon					Integer						Statistics module - Melons farmed since reset.
 pmcstatspumpkin					Integer						Statistics module - Pumpkinss farmed since reset.
