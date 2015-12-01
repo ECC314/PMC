@@ -79,7 +79,7 @@ IF(%PICKUPITEM% = "Cocoa Bean")
 ENDIF
 
 
-STRIP(%CHAT%,&chat)
+STRIP(&chat,%CHAT%)
 
 IFMATCHES(%&chat%,^Thanks for voting! You received a free NetherStar!$)
     @&pmcvotelastdate = %DATE%

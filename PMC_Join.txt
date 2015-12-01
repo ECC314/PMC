@@ -3,12 +3,13 @@ UNSET(special)
 
 &founder = "andrewkm"
 &serverowner = ""
-&serveradmin = "Nicit6"
-&gameadmin = "ClarinetPhoenix|oreo1227|Physicistsmom|Smorezs"
-&supermod = "314|Avowin|Caitlin_Crime|idkhowtoplay|Imaginex|pokemon9508|sick24|SonnyCPretzel|TaylorBros22"
-&moderator = "Bashdash100|Canadian_Apple|DrowningInPizza|GeorgiaMC|icondigi|MadMonster_|miniCLH|obblebobble|Riggs316|techy88|ze7707|zedoker"
+&serveradminp = "Nicit6"
+&serveradmin = "Physicistsmom"
+&gameadmin = "314|ClarinetPhoenix|oreo1227|Smorezs"
+&supermod = "Avowin|Caitlin_Crime|Canadian_Apple|idkhowtoplay|Imaginex|miniCLH|pokemon9508|sick24|SonnyCPretzel|TaylorBros22"
+&moderator = "Bashdash100|DiamondDesire|DrowningInPizza|GeorgiaMC|icondigi|Joliver|MadMonster_|obblebobble|Riggs316|techy88|ze7707|zedoker"
 &developer = "JamieSinn|KHobbits"
-&notable = "Dewsy92"
+&notable = "Dewsy92|clou44"
 &bot = "Pivillean|Radthorne"
 
 IF(!@pmcjoining)
@@ -28,6 +29,13 @@ IF(!@pmcjoining)
     
     IFMATCHES(%JOINEDPLAYER%,"^(%&serveradmin%)$")
         LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerAdmin] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+        PLAYSOUND(random.levelup)
+        SET(special)
+        LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
+    ENDIF
+	
+    IFMATCHES(%JOINEDPLAYER%,"^(%&serveradminp%)$")
+        LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerAdmin+] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
