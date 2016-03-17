@@ -15,6 +15,12 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.join\b")
 	UNSET(@pmcerrorc)
 ENDIF
 
+IFMATCHES(%@&pmccommand%,"(?i)^\.music\b")
+	EXEC(PMC_Music.txt,"PMC Music module")
+    FILTER()
+	UNSET(@pmcerrorc)
+ENDIF
+
 IFMATCHES(%@&pmccommand%,"(?i)^\.shout\b")
 	EXEC(PMC_Internal_Shout.txt,"PMC Shout module")
     FILTER()

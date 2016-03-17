@@ -3,13 +3,13 @@ UNSET(special)
 
 &founder = "andrewkm"
 &serverowner = ""
-&serveradminp = "Nicit6"
-&serveradmin = "Physicistsmom"
-&gameadmin = "314|ClarinetPhoenix|oreo1227|Smorezs"
-&supermod = "Avowin|Caitlin_Crime|Canadian_Apple|icondigi|idkhowtoplay|Imaginex|miniCLH|pokemon9508|sick24|SonnyCPretzel"
-&moderator = "Bashdash100|DiamondDesire|Drowninginpizza|GeorgiaMC|Joliver|MadMonster_|taylordaisy|techy88|xpurexcorex|ze7707|zedoker"
+&serveradminp = ""
+&serveradmin = "ClarinetPhoenix|Evanescence_"
+&gameadmin = "314|idkhowtoplay|Imaginex|pokemon9508|Smorezs"
+&supermod = "Avowin|Bashdash100|Drowninginpizza|MadMonster_|zr2002"
+&moderator = "265|7amoodw|Alarah|cdlawrence|Dccciz|dgam02|DiamondDesire|FuryFudge|MCHelix3000|ndm57dcraft|techy88|THCOOL"
 &developer = "JamieSinn|KHobbits"
-&notable = "Dewsy92|clou44"
+&notable = "clou44|Dewsy92|Nicit6|physyy"
 &bot = "Pivillean|Radthorne"
 
 IF(!@pmcjoining)

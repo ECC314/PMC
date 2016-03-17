@@ -5,6 +5,7 @@ Available commands:
 .about       Shows general PMC information.          - Core functionality
 .help        Calls the help pages.                   - Core functionality
 .join        Toggles the Join alert.                 - JoinAlert module
+.music       Plays random Minecraft music disks.     - Music module, enabled by default
 .sg          Allows use of further PMC SG commands.  - SurvivalGames module
 .shout       Toggles the visibility of shouts        - ShoutIgnore module
 .stats       Shows or resets various statistics.     - Statistics module
@@ -32,6 +33,8 @@ pmctoolspade        Integer            Slot ID of the spade.
 pmctoolaxe          Integer            Slot ID of the axe.
 pmctoolsword        Integer            Slot ID of the sword.
 pmctoolfort         Integer            Slot ID of the fortune pickaxe.
+pmcmusic            String[]           Array of music disk names.
+pmcmusicwait        Integer[]          Array of music disk durations.
 
 pmcstatsmelon       Integer            Statistics module - Melons farmed since reset.
 pmcstatspumpkin     Integer            Statistics module - Pumpkinss farmed since reset.
@@ -129,6 +132,8 @@ notable           String        JoinAlert        Regex pattern for players of in
 bot               String        JoinAlert        Regex pattern for bots.
 special           Boolean       JoinAlert        Assigns special colours to user groups.
 
+prefix            String        Core             [PMC: Module name] prefix.
+
 
 
 Used Files:
@@ -143,6 +148,7 @@ PMC_Internal_Shout         ShoutIgnore      Toggles the ShoutIgnore.
 PMC_Internal_Stats         Statistics       Displays or resets statistics.
 PMC_Internal_ToolSwitch    ToolSwitch       Toggles the ToolSwitch.
 PMC_Join                   JoinAlert        Announces a joined player.            
+PMC_Music                  Music            Plays random Minecraft music disks.
 PMC_Stats                  Statistics       Updates statistics.
 PMC_ToolSwitch             ToolSwitch       Adjusts inventory slot when enabled.
 PMC README                                  PMC main manual. Never executed ingame.
