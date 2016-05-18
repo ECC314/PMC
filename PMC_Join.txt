@@ -2,14 +2,12 @@ $${
 UNSET(special)
 
 &founder = "andrewkm"
-&serverowner = ""
-&serveradminp = ""
-&serveradmin = "ClarinetPhoenix|Evanescence_"
-&gameadmin = "314|idkhowtoplay|Imaginex|pokemon9508|Smorezs"
-&supermod = "Avowin|Bashdash100|Drowninginpizza|MadMonster_|zr2002"
-&moderator = "265|7amoodw|Alarah|cdlawrence|Dccciz|dgam02|DiamondDesire|FuryFudge|MCHelix3000|ndm57dcraft|techy88|THCOOL"
+&serveradmin = "ClarinetPhoenix|Nicit6||oreo1227"
+&gameadmin = "314|idkhowtoplay|Imaginex|pokemon9508"
+&supermod = "7amoodw|MadMonster_|zr2002"
+&moderator = "Alarah|Canadian_Apple|cdlawrence|dgam02|Maroiogog|MCHelix3000|oootopia|SimsElemental"
 &developer = "JamieSinn|KHobbits"
-&notable = "clou44|Dewsy92|Nicit6|physyy"
+&notable = "clou44|Dewsy92|physyy"
 &bot = "Pivillean|Radthorne"
 
 IF(!@pmcjoining)
@@ -20,22 +18,8 @@ IF(!@pmcjoining)
         LOGTO(LastJoined_Ingame,&9%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&serverowner%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerOwner] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
-        PLAYSOUND(random.levelup)
-        SET(special)
-        LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
-    ENDIF
-    
     IFMATCHES(%JOINEDPLAYER%,"^(%&serveradmin%)$")
         LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerAdmin] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
-        PLAYSOUND(random.levelup)
-        SET(special)
-        LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
-    ENDIF
-    
-    IFMATCHES(%JOINEDPLAYER%,"^(%&serveradminp%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerAdmin+] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
@@ -63,7 +47,7 @@ IF(!@pmcjoining)
     ENDIF
     
     IFMATCHES(%JOINEDPLAYER%,"^(%&developer%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &9[Developer] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+        LOG("&2&l[&a&lPMC: Join&2&l] &9[Developer][&6*&4VIP&6*&9] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&9%JOINEDPLAYER%)
