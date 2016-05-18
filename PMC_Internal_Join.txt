@@ -1,9 +1,11 @@
+&prefix = "&2&l[&a&lPMC: Join&2&l]&6" 
+
 IFMATCHES(%@&pmccommand%,"(?i)^\.join$")
 	TOGGLE(@pmcjoining)
     IF(!@pmcjoining)
-        LOG("&2&l[&a&lPMC: Join&2&l]&6 JoinAlert-Macro &aenabled&6.")
+        LOG("%&prefix% JoinAlert-Macro &aenabled&6.")
     ELSE
-        LOG("&2&l[&a&lPMC: Join&2&l]&6 JoinAlert-Macro &cdisabled&6.")
+        LOG("%&prefix% JoinAlert-Macro &cdisabled&6.")
     ENDIF
     UNSET(@pmcerror)
 ENDIF

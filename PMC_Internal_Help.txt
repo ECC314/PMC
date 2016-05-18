@@ -65,7 +65,6 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.help stat(s|istic(s)?)?$")
     LOG("    &e.stats [reset] farming  &6- Shows (or resets) &afarming &6statistics.")
     LOG("    &e.stats [reset] sg  &6- Shows (or resets) &cSurvivalGames &6statistics.")
     LOG("    &e.stats [reset] voting &6- Shows (or resets) &evoting &6statistics.")
-	LOG("    &e.stats [reset] chat &6- Shows (or resets) &bchat &6statistics.")
     LOG("")
     UNSET(@pmcerror)
 ENDIF

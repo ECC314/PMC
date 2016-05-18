@@ -1,25 +1,19 @@
 $${
-
-&pmctoolswitch1 = "stone|cobblestone|iron_ore|gold_ore|sandstone"
-&pmctoolswitch2 = "grass|dirt|sand|gravel|clay|mycelium"
-&pmctoolswitch3 = "planks|log|log2|fence|pumpkin|cocoa"
-&pmctoolswitch4 = ""
-&pmctoolswitch9 = "coal_ore|lapis_ore|diamond_ore|redstone_ore|lit_redstone_ore|emerald_ore"
 DO;  
     IF(@pmctoolswitch)    
-        IFMATCHES(%HITID%,"^%&pmctoolswitch2%$")
+        IFMATCHES(%HITID%,"^%@&pmctoolswitch2%$")
             IF((@#pmctoolshovel > 0) && (@#pmctoolshovel < 10))
                 SLOT(%@#pmctoolshovel%)
             ENDIF
         ENDIF
 
-        IFMATCHES(%HITID%,"^%&pmctoolswitch1%$")
+        IFMATCHES(%HITID%,"^%@&pmctoolswitch1%$")
             IF((@#pmctoolsilk > 0) && (@#pmctoolsilk < 10))
                 SLOT(%@#pmctoolsilk%)
             ENDIF
         ENDIF
         
-        IFMATCHES(%HITID%,"^%&pmctoolswitch3%$")
+        IFMATCHES(%HITID%,"^%@&pmctoolswitch3%$")
             IF((@#pmctoolaxe > 0) && (@#pmctoolaxe < 10))
                 SLOT(%@#pmctoolaxe%)
             ENDIF
@@ -31,7 +25,7 @@ DO;
             ENDIF
         ENDIF
         
-        IFMATCHES(%HITID%,"^%&pmctoolswitch9%$")
+        IFMATCHES(%HITID%,"^%@&pmctoolswitch9%$")
             IF((@#pmctoolfort > 0) && (@#pmctoolfort < 10))
                 SLOT(%@#pmctoolfort%)
             ENDIF

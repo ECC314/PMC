@@ -102,7 +102,7 @@ ENDIF
 IFMATCHES(%&chat%,^\[%PLAYER%\] was \*\*MegaLucky\*\* at voting (.+))
     @pmcvotemegadate = %DATE%
     @pmcvotemegatime = %TIME%
-    INC(@pmcvotemega)
+    INC(@#pmcvotemega)
 ENDIF
 
 IFMATCHES(%&chat%,^\[%PLAYER%\] was \*\*\*SuperLucky\*\*\* at voting (.+))
@@ -143,118 +143,4 @@ IFMATCHES(%&chat%,^\[ECC-SG\] %PLAYER% received \$(.+) EcoDollars for winning th
     @#pmcstatssgmoney = @#pmcstatssgmoney +#var
     INC(@#pmcstatssgwins)
 ENDIF
-
-
-
-
-IFMATCHES(%&chat%,"^\[.*?\] \[Builder\]")
-    @#pmcchatr1 = @#pmcchatr1+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[Resident\]")
-    @#pmcchatr2 = @#pmcchatr2+1
-ENDIF 
-IFMATCHES(%&chat%,"^\[.*?\] \[Mayor\]")
-    @#pmcchatr3 = @#pmcchatr3+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[President\]")
-    @#pmcchatr4 = @#pmcchatr4+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[Tycoon\]")
-    @#pmcchatr5 = @#pmcchatr5+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[\$EcoLeader\$\]")
-    @#pmcchatr6 = @#pmcchatr6+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[\$\$EcoMaster\$\$\]")
-    @#pmcchatr7 = @#pmcchatr7+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[\$\$\$EcoLegend\$\$\$\]")
-    @#pmcchatr8 = @#pmcchatr8+1
-ENDIF
-
-IFMATCHES(%&chat%,"^\[.*?\] \[Moderator\]")
-    @#pmcchats1 = @#pmcchats1+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[SuperMod\]")
-    @#pmcchats2 = @#pmcchats2+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[GameAdmin\]")
-    @#pmcchats3 = @#pmcchats3+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[ServerAdmin\]")
-    @#pmcchats4 = @#pmcchats4+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[ServerOwner\]")
-    @#pmcchats5 = @#pmcchats5+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[\|\|\|Founder\|\|\|\]")
-    @#pmcchats6 = @#pmcchats6+1
-ENDIF
-
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[\$\]")
-    @#pmcchatd1 = @#pmcchatd1+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[\$\$\]")
-    @#pmcchatd2 = @#pmcchatd2+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[\$\$\$\]")
-    @#pmcchatd3 = @#pmcchatd3+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[\$\$\$\$\]")
-    @#pmcchatd4 = @#pmcchatd4+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[VIP\]")
-    @#pmcchatd5 = @#pmcchatd5+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[VIP\+\]")
-    @#pmcchatd6 = @#pmcchatd6+1
-ENDIF
-IFMATCHES(%&chat%,"^\[.*?\] \[.*?\]\[\*VIP\*\]")
-    @#pmcchatd7 = @#pmcchatd7+1
-ENDIF
-
-IFMATCHES(%&chat%,"^\[G\]")
-    @#pmcchatg = @#pmcchatg+1
-ENDIF
-IFMATCHES(%&chat%,"^\[Tr\]")
-    @#pmcchattr = @#pmcchattr+1
-ENDIF
-IFMATCHES(%&chat%,"^\[Trv\]")
-    @#pmcchattrv = @#pmcchattrv+1
-ENDIF
-IFMATCHES(%&chat%,"^\[Auc\]")
-    @#pmcchatauc = @#pmcchatauc+1
-ENDIF
-IFMATCHES(%&chat%,"^\[V\]")
-    @#pmcchatv = @#pmcchatv+1
-ENDIF
-IFMATCHES(%&chat%,"^\[N\]")
-    @#pmcchatn = @#pmcchatn+1
-ENDIF
-IFMATCHES(%&chat%,"^\[L\]")
-    @#pmcchatl = @#pmcchatl+1
-ENDIF
-IFMATCHES(%&chat%,"^\[PvP\]")
-    @#pmcchatp = @#pmcchatp+1
-ENDIF
-IFMATCHES(%&chat%,"^\[M\]")
-    @#pmcchatm = @#pmcchatm+1
-ENDIF
-IFMATCHES(%&chat%,"^\[A\]")
-    @#pmcchata = @#pmcchata+1
-ENDIF
-IFMATCHES(%&chat%,"^\[Alert\]")
-    @#pmcchatal = @#pmcchatal+1
-ENDIF
-IFMATCHES(%&chat%,"^\[S\]")
-    @#pmcchats = @#pmcchats+1
-ENDIF
-IFMATCHES(%&chat%,"^\[Ad\]")
-    @#pmcchatad = @#pmcchatad+1
-ENDIF
-IFMATCHES(%&chat%,"^\[sg\]")
-    @#pmcchatsg = @#pmcchatsg+1
-ENDIF
-
-
 }$$

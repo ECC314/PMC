@@ -1,0 +1,49 @@
+$${
+// Initialization of variables (i.e. constants).
+
+// Initialization prefix.
+&prefix = "&2&l[&a&lPMC: Status&2&l]&6" 
+
+// ToolSwitcher module data: Assign tools to respective materials.
+@&pmctoolswitch1 = "stone|cobblestone|iron_ore|gold_ore|sandstone"
+@&pmctoolswitch2 = "grass|dirt|sand|gravel|clay|mycelium"
+@&pmctoolswitch3 = "planks|log|log2|fence|pumpkin|cocoa"
+@&pmctoolswitch9 = "coal_ore|lapis_ore|diamond_ore|redstone_ore|lit_redstone_ore|emerald_ore"
+
+// Join module data: Ranks.
+@&pmcjoinfounder = "andrewkm"
+@&pmcjoinserveradmin = "ClarinetPhoenix|Nicit6||oreo1227"
+@&pmcjoingameadmin = "314|idkhowtoplay|Imaginex|pokemon9508"
+@&pmcjoinsupermod = "7amoodw|MadMonster_|zr2002"
+@&pmcjoinmoderator = "Alarah|Canadian_Apple|cdlawrence|dgam02|Maroiogog|MCHelix3000|oootopia|SimsElemental"
+@&pmcjoindeveloper = "JamieSinn|KHobbits"
+@&pmcjoinbot = "Pivillean|Radthorne"
+
+// Music module data: Melody names and durations.
+@&pmcmusic[1] = "Blocks"
+@&pmcmusic[2] = "Cat"
+@&pmcmusic[3] = "Chirp"
+@&pmcmusic[4] = "Far"
+@&pmcmusic[5] = "Mall"
+@&pmcmusic[6] = "Mellohi"
+@&pmcmusic[7] = "Stal"
+@&pmcmusic[8] = "Strad"
+@&pmcmusic[9] = "Wait"
+@&pmcmusic[10] = "Ward"
+//@&pmcmusic[11] = "11"
+//@&pmcmusic[12] = "13"
+@#pmcmusicwait[1] = 345000
+@#pmcmusicwait[2] = 185000
+@#pmcmusicwait[3] = 185000
+@#pmcmusicwait[4] = 174000
+@#pmcmusicwait[5] = 197000
+@#pmcmusicwait[6] = 96000
+@#pmcmusicwait[7] = 150000
+@#pmcmusicwait[8] = 188000
+@#pmcmusicwait[9] = 251000
+@#pmcmusicwait[10] = 238000
+//@#pmcmusicwait[11] = 71000
+//@#pmcmusicwait[12] = 178000
+
+LOG("%&prefix% Pi's Macro Collection has been initialized.")
+}$$

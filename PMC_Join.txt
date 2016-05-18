@@ -1,68 +1,52 @@
 $${
+&prefix = "&2&l[&a&lPMC: Join&2&l]" 
+&suffix = "&6&l[&e&lStatus: &a&lOnline.&6&l]" 
 UNSET(special)
 
-&founder = "andrewkm"
-&serveradmin = "ClarinetPhoenix|Nicit6||oreo1227"
-&gameadmin = "314|idkhowtoplay|Imaginex|pokemon9508"
-&supermod = "7amoodw|MadMonster_|zr2002"
-&moderator = "Alarah|Canadian_Apple|cdlawrence|dgam02|Maroiogog|MCHelix3000|oootopia|SimsElemental"
-&developer = "JamieSinn|KHobbits"
-&notable = "clou44|Dewsy92|physyy"
-&bot = "Pivillean|Radthorne"
-
 IF(!@pmcjoining)
-    IFMATCHES(%JOINEDPLAYER%,"^(%&founder%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &9[&8|||&7Founder&8|||&9] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoinfounder%)$")
+        LOG("%&prefix% &9[&8|||&7Founder&8|||&9] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&9%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&serveradmin%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &4[ServerAdmin] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoinserveradmin%)$")
+        LOG("%&prefix% &4[ServerAdmin] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&4%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&gameadmin%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &c[&4G&came&4A&cdmin] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoingameadmin%)$")
+        LOG("%&prefix% &c[&4G&came&4A&cdmin] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&c%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&supermod%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &c[SuperMod] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoinsupermod%)$")
+        LOG("%&prefix% &c[SuperMod] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&c%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&moderator%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &3[Moderator] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoinmoderator%)$")
+        LOG("%&prefix% &3[Moderator] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&3%JOINEDPLAYER%)
     ENDIF
     
-    IFMATCHES(%JOINEDPLAYER%,"^(%&developer%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &9[Developer][&6*&4VIP&6*&9] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoindeveloper%)$")
+        LOG("%&prefix% &9[Developer][&6*&4VIP&6*&9] %JOINEDPLAYER% %&suffix%")
         PLAYSOUND(random.levelup)
         SET(special)
         LOGTO(LastJoined_Ingame,&9%JOINEDPLAYER%)
     ENDIF
-    
-    IFMATCHES(%JOINEDPLAYER%,"^(%&notable%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &6[Important player] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
-        PLAYSOUND(random.levelup)
-        SET(special) 
-        LOGTO(LastJoined_Ingame,&6%JOINEDPLAYER%)
-    ENDIF
 
-    IFMATCHES(%JOINEDPLAYER%,"^(%&bot%)$")
-        LOG("&2&l[&a&lPMC: Join&2&l] &7[Bot] %JOINEDPLAYER% &6&l[&e&lStatus: &a&lOnline.&6&l]")
-        PLAYSOUND(random.levelup)
+    IFMATCHES(%JOINEDPLAYER%,"^(%@&pmcjoinbot%)$")
         SET(special)
         LOGTO(LastJoined_Ingame,&7%JOINEDPLAYER%)
     ENDIF

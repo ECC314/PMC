@@ -1,9 +1,11 @@
+&prefix = "&2&l[&a&lPMC: SG&2&l]&6" 
+
 IFMATCHES(%@&pmccommand%,"(?i)^\.sg vote$")
     TOGGLE(@pmcsgvote)
     IF(!@pmcsgvote)
-        LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG vote &aenabled&6.")
+        LOG("%&prefix% Automated SG vote &aenabled&6.")
     ELSE
-        LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG vote &cdisabled&6.")
+        LOG("%&prefix% Automated SG vote &cdisabled&6.")
     ENDIF
     UNSET(@pmcerror)
 ENDIF
@@ -11,15 +13,15 @@ ENDIF
 IFMATCHES(%@&pmccommand%,"(?i)^\.sg kits?\b")
     IFMATCHES(%@&pmccommand%,"(?i)^\.sg kits? (.+)")
         MATCH(%@&pmccommand%,"(?i)^\.sg kits? (.+)",{@&pmcsgkits})
-        LOG("&2&l[&a&lPMC: SG&2&l]&6 Set to call &e%@&pmcsgkits%&6 when joining a game.")
+        LOG("%&prefix% Set to call &e%@&pmcsgkits%&6 when joining a game.")
     ELSE
         TOGGLE(@pmcsgkit)
         IF(@pmcsgkit)
-            LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG kit &aenabled&6.")
-            LOG("&2&l[&a&lPMC: SG&2&l]&6 Saved kits: &e%@&pmcsgkits%")
+            LOG("%&prefix% Automated SG kit &aenabled&6.")
+            LOG("%&prefix% Saved kits: &e%@&pmcsgkits%")
         ELSE
-            LOG("&2&l[&a&lPMC: SG&2&l]&6 Automated SG kit &cdisabled&6.")
-            LOG("&2&l[&a&lPMC: SG&2&l]&6 Saved kits: &e%@&pmcsgkits%")
+            LOG("%&prefix% Automated SG kit &cdisabled&6.")
+            LOG("%&prefix% Saved kits: &e%@&pmcsgkits%")
         ENDIF
     ENDIF
     UNSET(@pmcerror)
