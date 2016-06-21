@@ -35,7 +35,7 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? vot(e|ing) reset$")
     @&pmcvotelasttime = "Never"
     @&pmcvoteresetdate = %DATE%
     @&pmcvoteresettime = %TIME%
-	LOG("%&prefix%&e Voting &6statistics reset.")
+    LOG("%&prefix%&e Voting &6statistics reset.")
     UNSET(@pmcerror)
 ENDIF
         
@@ -121,15 +121,15 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? farm(ing)?$")
     LOG("&6Cocoa beans:  %@#pmcstatscocoa%")
     LOG("&cNether Warts: %@#pmcstatsnwart%")     
     LOG("&6Total worth:")
-    ECHO("//calc %@#pmcstatspumpkin%*0.4+%@#pmcstatsmelon%*1.65+%@#pmcstatspotato%*0.3+%@#pmcstatscarrots%*0.3+%@#pmcstatscane%*0.15+%@#pmcstatswheat%*0.6+%@#pmcstatscocoa%*0.6+%@#pmcstatsnwart%*0.35")
+    ECHO("//calc %@#pmcstatspumpkin%*0.4+%@#pmcstatsmelon%*2+%@#pmcstatspotato%*0.3+%@#pmcstatscarrots%*0.3+%@#pmcstatscane%*0.15+%@#pmcstatswheat%*0.6+%@#pmcstatscocoa%*0.6+%@#pmcstatsnwart%*0.35")
     UNSET(@pmcerror)
 ENDIF
-		
+        
 IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)?$")
-	LOG("&2&l[&a&lPMC&2&l]&c Error: Missing statistics parameter. -> &e.help stats")
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Missing statistics parameter. -> &e.help stats")
     UNSET(@pmcerror)   
 ENDIF
-		
+        
 IF(@pmcerror)
     LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid statistics parameter. -> &e.help stats")
     UNSET(@pmcerror)
