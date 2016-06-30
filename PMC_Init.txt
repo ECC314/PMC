@@ -12,10 +12,10 @@ $${
 
 // Join module data: Ranks.
 @&pmcjoinfounder = "andrewkm"
-@&pmcjoinserveradmin = "ClarinetPhoenix|Nicit6||oreo1227"
+@&pmcjoinserveradmin = "ClarinetPhoenix|Nicit6"
 @&pmcjoingameadmin = "314|idkhowtoplay|Imaginex|pokemon9508"
-@&pmcjoinsupermod = "7amoodw|dgam02|MadMonster_|oootopia|Zr2002"
-@&pmcjoinmoderator = "Alarah|a_man21|Canadian_Apple|GeorgiaMC|HarryHaz1|KissThis|Maroiogog|MCHelix3000|SimsElemental|Smorezs|Videowiz92|Vintage_Gamer|zjkhan"
+@&pmcjoinsupermod = "7amoodw|Alarah|dgam02|MadMonster_|oootopia|Videowiz92|Zr2002"
+@&pmcjoinmoderator = "a_man21|bobman3355|Canadian_Apple|GeorgiaMC|goblizz|HarryHaz1|KissThis|Maroiogog|MCHelix3000|SimsElemental|Smorezs|Vintage_Gamer|Whammerist5|zjkhan"
 @&pmcjoindeveloper = "JamieSinn|KHobbits"
 @&pmcjoinbot = "Pivillean|Radthorne"
 

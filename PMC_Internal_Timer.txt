@@ -1,0 +1,19 @@
+&prefix = "&2&l[&a&lPMC: Timer&2&l]" 
+
+
+IFMATCHES(%@&pmccommand%, "^\.timer ((\d+)h)? ?((\d+)m)? ?((\d+)s)? ?$")
+    MATCH(%@&pmccommand%, "^\.timer ((\d+)h)? ?((\d+)m)? ?((\d+)s)? ?$",{&null,#h,&null,#m,&null,#s})
+    @#pmctimertime = (#h * 3600) + (#m * 60) + #s
+    LOG("%&prefix%&6 Timer set to %@#pmctimertime% seconds.")
+	UNSET(@pmcerror)
+ENDIF
+        
+IFMATCHES(%@&pmccommand%,"^\.timer$")
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Missing timer parameter(s). -> &e.help timer")
+    UNSET(@pmcerror)   
+ENDIF
+        
+IF(@pmcerror)
+    LOG("&2&l[&a&lPMC&2&l]&c Error: Invalid timer parameter. -> &e.help timer")
+    UNSET(@pmcerror)
+ENDIF

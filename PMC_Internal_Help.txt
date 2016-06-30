@@ -69,6 +69,16 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.help stat(s|istic(s)?)?$")
     UNSET(@pmcerror)
 ENDIF
 
+IFMATCHES(%@&pmccommand%,"(?i)^\.help timer$")
+    LOG("")
+    LOG("&3- &bTimer module: Available commands &3-")
+    LOG("    &e.timer [<hours>h] [<minutes>m] [<seconds>s] &6- Sets and starts the timer.")
+    LOG("        &6Example 1: &e.timer 1h 15m 30s")
+	LOG("        &6Example 2: &e.timer 17m 80s")
+    LOG("")
+    UNSET(@pmcerror)
+ENDIF
+
 IFMATCHES(%@&pmccommand%,"(?i)^\.help tool$")
     LOG("")
     LOG("&3- &bToolSwitch module: Available commands &3-")

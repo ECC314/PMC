@@ -1,0 +1,14 @@
+$${
+DO;
+	IF(@#pmctimertime > 0)
+		WAIT(1)
+		DEC(@#pmctimertime,1)
+		IF(@#pmctimertime = 0)
+			LOG("&6===================================")
+			LOG("&2&l[&a&lPMC: Timer&2&l] &4Timer expired.")
+			LOG("&6===================================")
+			PLAYSOUND(random.levelup)
+		ENDIF
+	ENDIF
+LOOP()
+}$$
