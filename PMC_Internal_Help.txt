@@ -75,6 +75,7 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.help timer$")
     LOG("    &e.timer [<hours>h] [<minutes>m] [<seconds>s] &6- Sets and starts the timer.")
     LOG("        &6Example 1: &e.timer 1h 15m 30s")
 	LOG("        &6Example 2: &e.timer 17m 80s")
+    LOG("    &e.timer pause &6- Toggles whether the timer is paused.")
     LOG("")
     UNSET(@pmcerror)
 ENDIF
