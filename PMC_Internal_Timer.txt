@@ -4,8 +4,23 @@
 IFMATCHES(%@&pmccommand%, "^\.timer ((\d+)h)? ?((\d+)m)? ?((\d+)s)? ?$")
     MATCH(%@&pmccommand%, "^\.timer ((\d+)h)? ?((\d+)m)? ?((\d+)s)? ?$",{&null,#h,&null,#m,&null,#s})
     @#pmctimertime = (#h * 3600) + (#m * 60) + #s
+    UNSET(@pmctimerispaused)
     LOG("%&prefix%&6 Timer set to %@#pmctimertime% seconds.")
 	UNSET(@pmcerror)
+ENDIF
+
+IFMATCHES(%@&pmccommand%, "^\.timer pause")
+    IF(@#pmctimertime > 0)
+        TOGGLE(@pmctimerispaused)
+        IF(@pmctimerispaused)
+            LOG("%&prefix%&6 Timer paused")
+        ELSE
+            LOG("%&prefix%&6 Timer resumed")
+        ENDIF
+    ELSE
+        LOG("&2&l[&a&lPMC&2&l]&c Error: Timer cannot pause when not running. -> &e.help timer")
+    ENDIF
+    UNSET(@pmcerror)
 ENDIF
         
 IFMATCHES(%@&pmccommand%,"^\.timer$")
