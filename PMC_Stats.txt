@@ -74,7 +74,7 @@ IF(%PICKUPITEM% = "Nether Wart")
 @#pmcstatsnwart = @#pmcstatsnwart + %PICKUPAMOUNT%
 ENDIF
 
-IF(%PICKUPITEM% = "Cocoa Bean")
+IF(%PICKUPITEM% = "Cocoa Beans")
 @#pmcstatscocoa = @#pmcstatscocoa + %PICKUPAMOUNT%
 ENDIF
 
