@@ -78,6 +78,10 @@ IF(%PICKUPITEM% = "Cocoa Beans")
 @#pmcstatscocoa = @#pmcstatscocoa + %PICKUPAMOUNT%
 ENDIF
 
+IF(%PICKUPITEM% = "Beetroot")
+@#pmcstatsbeet = @#pmcstatsbeet + %PICKUPAMOUNT%
+ENDIF
+
 
 STRIP(&chat,%CHAT%)
 
