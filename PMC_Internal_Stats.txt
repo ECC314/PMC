@@ -102,6 +102,7 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? reset farm(ing)?$")
     @#pmcstatscane = 0
     @#pmcstatsnwart = 0
     @#pmcstatscocoa = 0
+    @#pmcstatsbeet = 0
     LOG("%&prefix%&a Farming &6statistics reset.")
     @&pmcstatsdatef = %DATE%
     @&pmcstatstimef = %TIME%
@@ -120,6 +121,7 @@ IFMATCHES(%@&pmccommand%,"(?i)^\.stat(s|istic(s)?)? farm(ing)?$")
     LOG("&aSugar Canes:  %@#pmcstatscane%")
     LOG("&6Cocoa beans:  %@#pmcstatscocoa%")
     LOG("&cNether Warts: %@#pmcstatsnwart%")     
+    LOG("&cBeetroots: %@#pmcstatsbeet%")
     LOG("&6Total worth:")
     ECHO("//calc %@#pmcstatspumpkin%*0.4+%@#pmcstatsmelon%*2+%@#pmcstatspotato%*0.3+%@#pmcstatscarrots%*0.3+%@#pmcstatscane%*0.15+%@#pmcstatswheat%*0.6+%@#pmcstatscocoa%*0.6+%@#pmcstatsnwart%*0.35")
     UNSET(@pmcerror)
